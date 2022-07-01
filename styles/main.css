@@ -1,0 +1,284 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Favorit Regular;
+    src: url(type/ABCFavoritVariableEdu.woff);
+}
+
+@font-face {
+    font-family: Wingdings;
+    src: url(type/wingding.woff);
+}
+
+:root {
+    --main: #1900B2;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    font-family: Favorit Regular;
+    color: var(--main);
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    font-size: 42pt;
+    line-height: 48pt;
+    margin: 0;
+    font-variation-settings: 'wght' 250;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.discipline:hover, #moreabt-btn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.emoji {
+    font-family: Wingdings;
+    font-weight: 500;
+}
+
+.project-window {
+    width:auto;
+    height:auto;
+    border: 3px solid var(--main);
+    position: absolute;
+    background-color: white;
+    display: none;
+    flex-direction:column;
+}
+
+.project-window a {
+    margin: 0;
+}
+
+.project-window img {
+    max-width: 400px;
+    margin-bottom: -7px; /* img inside a creates weird bottom margin */
+}
+
+#portfolio-window {
+    max-width: 350px;
+}
+
+.window-topbar {
+    border-bottom: 3px solid var(--main);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: -1px;
+}
+
+.window-topbar p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.circles-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 3px solid var(--main);
+    margin: 0 3px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+    bottom: 10px;
+    position: fixed;
+    width:99%;
+}
+
+.footer h3 {
+    font-weight: lighter;
+}
+
+#dialogbox {
+    position: absolute;
+    width: 8%;
+    right: 40px;
+    bottom: 60px;
+    display: none;
+}
+
+#contact:hover{
+    cursor: pointer;
+}
+
+.grabbing {
+    cursor: grabbing !important;
+}
+
+.toGrab {
+    cursor: grab;
+}
+
+a {
+    color:var(--main);
+    text-decoration: none;
+}         /* Unvisited link  */
+a:visited {color:var(--main);} /* Visited link    */
+a:hover {color:var(--main);}   /* Mouse over link */
+a:active {color:var(--main);}  /* Selected link   */
+
+/* Para proyectos */
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-between;
+}
+
+.description {
+    position: relative;
+    width: 100%;
+}
+
+.description h2 {
+    font-weight: lighter;
+    position: fixed;
+    width: 35%;
+    margin: 0;
+    text-align: justify;
+    font-size: 1.35em;
+    /* line-height: 150%; */
+}
+
+.images-wrapper {
+    max-width: 60%;
+}
+
+.images-wrapper img {
+    width: 100%;
+}
+
+.posters-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+.posters-wrapper img {
+    max-width: 48%;
+    margin-bottom: 2%;
+    display: none;
+}
+
+.projects-slider {
+    display: flex;
+    flex-direction: row;
+    gap:25px;
+    align-items: center;
+}
+
+.projects-slider .emoji {
+    font-size: 3.5em;
+}
+
+.projects-slider h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.forproject {
+    width: 35%;
+}
+
+@media screen and (max-width: 889px){
+
+    html {
+        height: fit-content;
+        margin-bottom: 75px; /*Consistent margin for bottom navbar*/
+    }
+
+    body {
+        overflow: visible;
+    }
+
+    h1 {
+        font-size: 2em;
+        line-height: 1.25em;
+    }
+
+    #moreabt-btn img {
+        width: 9%;
+    }
+
+    .project-window {
+        margin: 20px 0;
+    }
+
+    .project-window img {
+        max-width: 100%;
+    }
+
+    #portfolio-window {
+        max-width: 100%;
+    }
+
+    .window-topbar p {
+        font-size: 10pt;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .description {
+        position: relative;
+    }
+    
+    .description h2 {
+        width: 100%;
+        position: relative;
+    }
+
+    .images-wrapper {
+        max-width: 100%;
+    }
+
+    .posters-wrapper img {
+        max-width: 100%;
+    }
+
+    .projects-slider {
+        gap: 15px;
+    }
+
+    .forproject {
+        width: 100%;
+    }
+
+    .footer {
+        width: 97.5%;
+        background-color: white;
+        bottom: 0;
+    }
+
+    .footer h1 {
+        font-size: 2.75em;
+    }
+}

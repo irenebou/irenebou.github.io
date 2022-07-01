@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="js/d3.v6.min.js" charset="utf-8"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="icon" type="image/x-icon" href="../../images/me.svg">
+    <title>Irene Bou</title>
+</head>
+
+<body style="overflow: visible !important;">
+    <div class="content-wrapper">
+        <div class="description">
+            <h2>
+                Every summer, I design a series of posters just for fun and to experiment with different layouts and styles. 
+                These are the series I've made so far:<br><br>
+
+                <b style="margin-left: 5%;"><span class="emoji">Ä</span> <a href="#" class="prueba" id="2021">2021 (x12 posters)</a></b><br>
+                <b style="margin-left: 5%;"><span class="emoji">Ä</span> <a href="#" class="prueba" id="2022">2022 (x12 posters)</a></b>
+            </h2>
+        </div>
+
+        <div class="images-wrapper posters-wrapper">
+            <!-- 2021 posters -->
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 9.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 15.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 18.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 19.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 20.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 21.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 22.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 25.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 27.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 29.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 1 copia 32.png">
+            <img class="2021" src="../../images/projects/posters/2021/Mesa de trabajo 49 copia 3.png">
+
+            <!-- 2022 posters (placeholders) -->
+            <img class="2022" src="../../images/projects/posters/2022/poster1.jpg">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let anchorId = document.getElementsByClassName("description")[0].getElementsByTagName("a");
+        let allPosters = document.getElementsByClassName("posters-wrapper")[0].getElementsByTagName("img");
+        for (let i=0; i<anchorId.length; i++) {
+            anchorId[i].addEventListener("click", function(e){
+                let year = e.target.id;
+                e.target.style.textDecoration = "underline";
+
+                // <= throws a weird error but does show entirety of posters each year
+                for(let k=0; k<=allPosters.length; k++){
+                    let yearPosters = document.getElementsByClassName(year);
+                    for(let n=0; n<yearPosters.length; n++){
+                        yearPosters[n].style.display = "block";
+                        // console.log(yearPosters.length)
+                    } allPosters[k].style.display = "none";
+                }
+            // console.log(e.target)
+            });
+            anchorId[i].style.textDecoration = "none";
+        }
+    </script>
+
+    <div class="footer forproject">
+        <a href="../../index.html"><img src="../../images/me.svg"></a>
+        <div class="projects-slider">
+            <h3 class="emoji"><a href="sunseekers.html">E</a></h3>
+            <h3>Posters collections</h3>
+            <h3 class="emoji"><a href="">F</a></h3>
+        </div>
+
+    </div>
+</body>
+</html>
